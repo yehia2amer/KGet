@@ -117,6 +117,7 @@ pub mod organize;
 pub mod progress;
 pub mod protocol;
 pub mod queue;
+pub mod remuxer;
 pub mod rules;
 pub mod runner;
 pub mod utils;
@@ -152,6 +153,7 @@ pub use utils::{
 pub use zip_preview::{ZipEntryInfo, inspect_zip_target};
 
 // Re-exports: Protocol helpers
+pub use remuxer::{RemuxOptions, is_ffmpeg_available, remux_lossless};
 pub use webdav::is_webdav_url;
 pub use ytdlp::{is_video_url, ytdlp_available, ytdlp_binary};
 
