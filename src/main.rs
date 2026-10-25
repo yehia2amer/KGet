@@ -981,7 +981,8 @@ fn real_main() -> Result<i32, BoxError> {
             return Err("--preview-zip requires a URL or file path".into());
         }
         args.overrides().apply(&mut config);
-        let client = kget::http::build_client(&config.proxy, &kget::http::ClientOptions::default())?;
+        let client =
+            kget::http::build_client(&config.proxy, &kget::http::ClientOptions::default())?;
         let headers = runner::parse_extra_headers(&args.header);
         let entries = kget::zip_preview::inspect_zip_target(&args.url, &client, &headers)?;
         kget::zip_preview::print_zip_preview(&entries);
@@ -1010,8 +1011,6 @@ fn real_main() -> Result<i32, BoxError> {
         );
         kget::remuxer::remux_lossless(&[input_path], &output_path, &opts)?;
         println!("Remux completed: {}", output_path.display());
-        return Ok(0);
-    }
         return Ok(0);
     }
 
