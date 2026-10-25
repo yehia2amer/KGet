@@ -120,6 +120,7 @@ pub mod queue;
 pub mod remuxer;
 pub mod rules;
 pub mod runner;
+pub mod stream_manifest;
 pub mod utils;
 pub mod zip_preview;
 
@@ -154,6 +155,7 @@ pub use zip_preview::{ZipEntryInfo, inspect_zip_target};
 
 // Re-exports: Protocol helpers
 pub use remuxer::{RemuxOptions, is_ffmpeg_available, remux_lossless};
+pub use stream_manifest::{download_hls_stream, is_hls_url, parse_m3u8};
 pub use webdav::is_webdav_url;
 pub use ytdlp::{is_video_url, ytdlp_available, ytdlp_binary};
 
